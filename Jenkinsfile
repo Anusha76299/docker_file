@@ -23,8 +23,8 @@ node{
     stage("deploy application as docker"){
         //def dockerRun = "docker run -d -p 8080:8080 --name webappcontainer anusha76299/web-app:${buildNumber}"
         sshagent(['docke_dev']) {
-        sh "ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.240 docker rm -f webappcontainer || true"
-        sh "ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.240 docker run -d -p 8080:8080 --name webappcontainer anusha76299/web-app:${buildNumber}"
+        sh "ssh -o StrictHostKeyChecking=no ec2-user@3.82.113.226 docker rm -f webappcontainer || true"
+        sh "ssh -o StrictHostKeyChecking=no ec2-user@3.82.113.226 docker run -d -p 8080:8080 --name webappcontainer anusha76299/web-app:${buildNumber}"
         }
     }
 }
